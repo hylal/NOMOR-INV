@@ -26,27 +26,7 @@
 	
 	include 'koneksi.php';
 
-	// mengambil data barang dengan kode paling besar
-//$query = mysqli_query($koneksi, "SELECT max(kode) as kodeTerbesar FROM barang");
-//$data = mysqli_fetch_array($query);
-//$kodeBarang = $data['kodeTerbesar'];
-
-// mengambil angka dari kode barang terbesar, menggunakan fungsi substr
-// dan diubah ke integer dengan (int)
-//$urutan = (int) substr($kodeBarang, 3, 3);
-
-// bilangan yang diambil ini ditambah 1 untuk menentukan nomor urut berikutnya
-//$urutan++;
-
-// membentuk kode barang baru
-// perintah sprintf("%03s", $urutan); berguna untuk membuat string menjadi 3 karakter
-// misalnya perintah sprintf("%03s", 15); maka akan menghasilkan '015'
-// angka yang diambil tadi digabungkan dengan kode huruf yang kita inginkan, misalnya BRG 
-//$huruf = "BRG";
-//$kodeBarang = $huruf . sprintf("%03s", $urutan);
-//echo $kodeBarang;
-
-// coba bikin BR G 001
+	
 
 $query = mysqli_query($koneksi, "SELECT max(mid(kode,9,4)) as invoice_no 
 									FROM barang
@@ -67,15 +47,7 @@ echo $kodeBarang;
 
 
 
- //if($query->num_rows() > 0) {
-//	 $row = $data->row();
-//	 $n = ((int)$row->invoice_no) + 1;
-//	 $no = sprintf("'%'.04d", $n);
- //} else {
-//	 $no = "0001";
- //}
-//$invoice = "MP".date('ymd').$no;
-// echo $invoice;
+ 
 
 
 
